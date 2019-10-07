@@ -35,7 +35,7 @@ credentials = cognito_identity.get_credentials_for_identity(
 
 # write shell script, temporary credentials require SessionToken
 with open('aws.sh', 'w') as f:
-    f.write("# Expiration: {:s}".format(credentials['Credentials']['Expiration'].isoformat()))
+    f.write("# Expiration: {:s}\n".format(credentials['Credentials']['Expiration'].isoformat()))
     f.write("AWS_ACCESS_KEY_ID={:s}\n".format(credentials['Credentials']['AccessKeyId']))
     f.write("AWS_SECRET_ACCESS_KEY={:s}\n".format(credentials['Credentials']['SecretKey']))
     f.write("AWS_SESSION_TOKEN={:s}\n".format(credentials['Credentials']['SessionToken']))
