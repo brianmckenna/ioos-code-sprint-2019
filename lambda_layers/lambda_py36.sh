@@ -14,7 +14,7 @@ pip install numpy scipy # provided by AWS layer
 # install to python directory
 pip install --no-deps -t python -r requirements.txt
 # reduce footprint
-find python -name "*.so" | xargs strip
-find python -type d -name "tests" -exec rm -rf {} \;
+#find python -name "*.so" | xargs strip
+#find python -type d -name "tests" -exec rm -rf {} \;
 # compress
 zip -r -9 -q "${LAYERNAME}_py36.zip" python
