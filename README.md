@@ -23,9 +23,14 @@ Keys will expire: 2019-10-03T19:36:13-04:00
 ```
 After authentication, the temporary credentials are dumped into `aws.sh` which is just a wrapper setting the AWS environment variables. Feel free to assign them as you wish, script can be used to execute `awscli` commands, e.g. `sh aws.sh aws lambda list-function`
 
-### example: upload Lambda layer
+#### example: upload Lambda layer
 ```
 aws lambda publish-layer-version   \
   --layer-name xarray_netcdf4_py36 \
   --zip-file fileb://xarray_netcdf4_py36.zip
+```
+
+#### example: list a code sprint bucket
+```
+aws s3 ls s3://ioos-code-sprint-2019
 ```
